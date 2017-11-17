@@ -2,7 +2,7 @@
 
 Parity Dev chain hello world sample /w web3 v1 beta
 
-Download latest parity stable (e.g. 1.7.9-stable - )
+Download latest parity stable from parity/parity's github (e.g. 1.7.9-stable)
 
     parity --chain dev --unlock $(parity --chain dev account list) --password ./pass.txt
 

@@ -58,6 +58,11 @@ const main = async () => {
   const rand = Math.floor(Math.random() * 10000)
   const string = toHex(`test-${rand}`)
 
+  // myContractInstanceRoot.once('Pushed', {}, function(err, evt){
+  //   c.log("Event value (#2):", JSON.stringify(evt, null, '  '))
+  //   c.log(___)
+  // })
+
   // calling the "setter" method - this will trigger a blockchain transaction
   const receipt = await myContractInstance.set(string).send()
 
@@ -68,6 +73,10 @@ const main = async () => {
   const value = await myContractInstance.data().call()
   c.log("Value:", hexToString(value))
 
+  const evtData = receipt.events.Pushed
+  // c.log("Event:", JSON.stringify(evtData, null, '  '))
+  c.log("Event value:", hexToString(evtData.returnValues.value))
+  c.log(___)
 }
 
 main()
